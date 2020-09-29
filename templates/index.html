@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="C:\Users\sarath\Documents\Python\project\VehicleResale\static\css\style.css">
+</head>
+
+<body>
+
+ <div class="login">
+   <center>
+     <h1>Vehicle Resale Value Prediction</h1><br>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}" method="post">
+
+
+        <input type="text" name="VehType" placeholder="Vehicle Type" required="required" size="50"/><br>
+        <input type="text" name="YOR" placeholder="Year of Registration" required="required" size="50"/><br>
+        <input type="text" name="Gear" placeholder="Gearbox" required="required" size="50"/><br>
+        <input type="text" name="powerPS" placeholder="powerPS" required="required" size="50"/><br>
+        <input type="text" name="km" placeholder="Kilometers Travelled" required="required" size="50"/><br>
+        <input type="text" name="MOR" placeholder="Month Of Registration" required="required" size="50"/><br>
+        <input type="text" name="FT" placeholder="Fuel Type" required="required" size="50"/><br>
+        <input type="text" name="brand" placeholder="Brand" required="required" size="50"/><br>
+        <input type="text" name="R/D" placeholder="Not Repaired/Damaged" required="required" size="50"/><br><br><br>
+
+        <input type="submit" class="btn btn-primary btn-block btn-large" value="Predict">
+
+    </form>
+
+ <br>
+   <br>
+    <h1> {{prediction_text}} </h1>
+  </center>
+
+ </div>
+
+
+</body>
+</html>
